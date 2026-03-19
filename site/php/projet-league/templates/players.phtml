@@ -1,0 +1,15 @@
+<main>
+  <section class="all-players">
+    <h2 class="section-title pink">LES PLAYERS DE LA LEAGUE</h2>
+    <div class="players-grid-full">
+      <?php foreach ($data["players"] as $player) { ?>
+        <div class="player-card-full">
+          <img src="<?= $player->getPortrait()->getUrl() ?>" alt="<?= $player->getPortrait()->getAlt() ?>">
+          <h4><?= $player->getNickname() ?></h4>
+          <p class="team-name"><?= $player->getTeam()->getName() ?></p>
+          <a href="index.php?route=player&id=<?= $player->getId() ?>" class="btn-discover">DÉCOUVRIR <?= $player->getNickname() ?></a>
+        </div>
+      <?php } ?>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,461 @@
+/* ===== VARIABLES ===== */
+:root {
+  --darker-grey: #0b132b;
+  --dark-grey: #1c2541;
+  --yellow: #d4b52f;
+  --green: #509d77;
+  --pink: #d97ab5;
+  --blue: #45a0ec;
+  --purple: #9e87cb;
+  --red: #d66f75;
+  --grey: #83a1bb;
+  --white: #ffffff;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== GLOBAL ===== */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--darker-grey);
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+  background-color: var(--darker-grey);
+}
+
+header h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+header nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+header nav a {
+  font-size: 0.8rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: var(--grey);
+  transition: color 0.3s;
+}
+
+header nav a:hover {
+  color: var(--white);
+}
+
+/* ===== SECTION TITLES ===== */
+.section-title {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  margin-bottom: 30px;
+}
+
+.section-title.yellow {
+  color: var(--yellow);
+}
+
+.section-title.purple {
+  color: var(--purple);
+}
+
+.section-title.green {
+  color: var(--green);
+}
+
+.section-title.pink {
+  color: var(--pink);
+}
+
+.section-title.blue {
+  color: var(--blue);
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: url("../images/home_background_league.png") center/cover no-repeat;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h2 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-weight: 300;
+  color: var(--grey);
+}
+
+/* ===== FEATURED TEAM ===== */
+.featured-team {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-spotlight {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.team-spotlight > img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.team-info h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.team-info > p {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin-bottom: 15px;
+}
+
+.team-players {
+  display: flex;
+  gap: 20px;
+}
+
+.player-mini {
+  text-align: center;
+}
+
+.player-mini img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.player-mini p {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+/* ===== FEATURED PLAYERS ===== */
+.featured-players {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.players-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.player-card {
+  text-align: center;
+}
+
+.player-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.player-card h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.player-card .team-name {
+  font-size: 0.8rem;
+  color: var(--grey);
+}
+
+/* ===== LAST GAME ===== */
+.last-game {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-name {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.game-date {
+  font-size: 0.85rem;
+  color: var(--grey);
+  margin-bottom: 30px;
+}
+
+.game-teams {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.game-team img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== ALL PLAYERS PAGE ===== */
+.all-players {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.players-grid-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.player-card-full {
+  background-color: var(--dark-grey);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.player-card-full img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.player-card-full h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.player-card-full .team-name {
+  font-size: 0.8rem;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+.btn-discover {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  color: var(--grey);
+  border: 1px solid var(--grey);
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.btn-discover:hover {
+  color: var(--white);
+  border-color: var(--white);
+}
+
+/* ===== ALL TEAMS PAGE ===== */
+.all-teams {
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.team-card {
+  background-color: var(--dark-grey);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.team-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.team-card h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: var(--yellow);
+  margin-bottom: 4px;
+}
+
+.team-card .team-desc {
+  font-size: 0.8rem;
+  color: var(--grey);
+  margin-bottom: 12px;
+}
+
+/* ===== ALL MATCHS PAGE ===== */
+.all-matchs {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.match-card {
+  background-color: var(--dark-grey);
+  border-radius: 8px;
+  padding: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.match-card h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+/* ===== PLAYER DETAIL PAGE ===== */
+.player-profile {
+  padding: 50px 20px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.player-portrait img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.player-performances {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.perf-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.perf-table thead {
+  border-bottom: 1px solid var(--grey);
+}
+
+.perf-table th {
+  padding: 12px 10px;
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: var(--grey);
+}
+
+.perf-table td {
+  padding: 12px 10px;
+  color: var(--white);
+}
+
+.perf-table .opponent-name {
+  color: var(--pink);
+}
+
+.perf-table .win {
+  color: var(--green);
+}
+
+.perf-table .lose {
+  color: var(--red);
+}
+
+.player-teammates {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.teammates-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.teammate-card {
+  text-align: center;
+}
+
+.teammate-card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.teammate-card h4 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  color: var(--pink);
+  margin-bottom: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 30px;
+  text-align: center;
+  background-color: var(--darker-grey);
+}

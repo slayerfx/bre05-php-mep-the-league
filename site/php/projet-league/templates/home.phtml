@@ -1,0 +1,56 @@
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <h2>TOUT SUR LA LEAGUE</h2>
+    <p>Les players, les teams et l'actu des matchs</p>
+  </section>
+
+  <!-- LA TEAM A LA UNE -->
+  <section class="featured-team">
+    <h3 class="section-title yellow">LA TEAM A LA UNE</h3>
+    <div class="team-spotlight">
+      <img src="<?= $data["team"]->getLogo()->getUrl() ?>" alt="<?= $data["team"]->getLogo()->getAlt() ?>">
+      <div class="team-info">
+        <h4><?= $data["team"]->getName() ?></h4>
+        <p>Les players</p>
+        <div class="team-players">
+          <?php foreach ($data["teamPlayers"] as $player) { ?>
+            <div class="player-mini">
+              <img src="<?= $player->getPortrait()->getUrl() ?>" alt="<?= $player->getPortrait()->getAlt() ?>">
+              <p><?= $player->getNickname() ?></p>
+            </div>
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LES PLAYERS A LA UNE -->
+  <section class="featured-players">
+    <h3 class="section-title purple">LES PLAYERS A LA UNE</h3>
+    <div class="players-grid">
+      <?php foreach ($data["featuredPlayers"] as $player) { ?>
+        <div class="player-card">
+          <img src="<?= $player->getPortrait()->getUrl() ?>" alt="<?= $player->getPortrait()->getAlt() ?>">
+          <h4><?= $player->getNickname() ?></h4>
+          <p class="team-name"><?= $player->getTeam()->getName() ?></p>
+        </div>
+      <?php } ?>
+    </div>
+  </section>
+
+  <!-- LE DERNIER MATCH -->
+  <section class="last-game">
+    <h3 class="section-title green">LE DERNIER MATCH</h3>
+    <h4 class="game-name"><?= $data["lastGame"]->getName() ?></h4>
+    <p class="game-date"><?= $data["lastGame"]->getDate() ?></p>
+    <div class="game-teams">
+      <div class="game-team">
+        <img src="<?= $data["lastGame"]->getTeam1()->getLogo()->getUrl() ?>" alt="<?= $data["lastGame"]->getTeam1()->getLogo()->getAlt() ?>">
+      </div>
+      <div class="game-team">
+        <img src="<?= $data["lastGame"]->getTeam2()->getLogo()->getUrl() ?>" alt="<?= $data["lastGame"]->getTeam2()->getLogo()->getAlt() ?>">
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,15 @@
+<main>
+  <section class="all-teams">
+    <h2 class="section-title yellow">LES TEAMS DE LA LEAGUE</h2>
+    <div class="teams-grid">
+      <?php foreach ($data["teams"] as $team) { ?>
+        <div class="team-card">
+          <img src="<?= $team->getLogo()->getUrl() ?>" alt="<?= $team->getLogo()->getAlt() ?>">
+          <h4><?= $team->getName() ?></h4>
+          <p class="team-desc"><?= $team->getDescription() ?></p>
+          <a href="#" class="btn-discover"><?= "DÉCOUVRIR " . $team->getName() ?></a>
+        </div>
+      <?php } ?>
+    </div>
+  </section>
+</main>

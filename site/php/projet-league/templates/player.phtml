@@ -1,0 +1,48 @@
+<main>
+  <!-- SECTION JOUEUR -->
+  <section class="player-profile">
+    <h2 class="section-title pink"><?= $data["player"]->getNickname() ?></h2>
+    <div class="player-portrait">
+      <img src="<?= $data["player"]->getPortrait()->getUrl() ?>" alt="<?= $data["player"]->getPortrait()->getAlt() ?>">
+    </div>
+  </section>
+
+  <!-- SECTION PERFORMANCES -->
+  <section class="player-performances">
+    <h2 class="section-title yellow">SES PERFORMANCES</h2>
+    <table class="perf-table">
+      <thead>
+        <tr>
+          <th>TEAM ADVERSE</th>
+          <th>POINTS</th>
+          <th>ASSISTS</th>
+          <th>VICTOIRE ?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($data["performances"] as $perf) { ?>
+        <tr>
+          <td class="opponent-name"><?= $perf->getOpponent()->getName() ?></td>
+          <td><?= $perf->getPoints() ?></td>
+          <td><?= $perf->getAssists() ?></td>
+          <td class="<?= $perf->getWon() ? 'win' : 'lose' ?>"><?= $perf->getWon() ? 'Oui' : 'Non' ?></td>
+        </tr>
+        <?php } ?>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION COEQUIPIERS -->
+  <section class="player-teammates">
+    <h2 class="section-title blue">SA TEAM</h2>
+    <div class="teammates-grid">
+      <?php foreach ($data["teammates"] as $teammate) { ?>
+      <div class="teammate-card">
+        <img src="<?= $teammate->getPortrait()->getUrl() ?>" alt="<?= $teammate->getPortrait()->getAlt() ?>">
+        <h4><?= $teammate->getNickname() ?></h4>
+        <a href="index.php?route=player&id=<?= $teammate->getId() ?>" class="btn-discover">DÉCOUVREZ <?= $teammate->getNickname() ?></a>
+      </div>
+      <?php } ?>
+    </div>
+  </section>
+</main>
